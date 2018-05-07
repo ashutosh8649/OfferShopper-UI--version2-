@@ -21,6 +21,7 @@ export class UserdetailsComponent implements OnInit {
     private messageService: MessageService,
     private _vcr: ViewContainerRef
     ) { }
+    
   states= States.states;
   cities=Cities.citiesName;
   data:any;
