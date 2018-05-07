@@ -114,6 +114,7 @@ del {
 	cursor: pointer;
 	max-width: 18rem;
 	max-height: 22rem;
+	border: 0px;
 }
 
 .card-data {
@@ -127,6 +128,7 @@ del {
 }
 
 .card-heading {
+	color:black;
 	font-size: 0.9rem;
 }
 
