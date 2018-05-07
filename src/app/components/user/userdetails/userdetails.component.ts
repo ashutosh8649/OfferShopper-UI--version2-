@@ -21,6 +21,7 @@ export class UserdetailsComponent implements OnInit {
     private messageService: MessageService,
     private _vcr: ViewContainerRef
     ) { }
+    
   states= States.states;
   cities=Cities.citiesName;
   data:any;
@@ -166,11 +167,6 @@ export class UserdetailsComponent implements OnInit {
       this.messageService.showSuccessToast(this._vcr,"Updated");
     }, (error) =>{
     })
-  }
-
-  setShopAddress() {
-    this.shopState = this.state;
-    this.shopZip = this.zip;
   }
 
   setCheckboxAddress() {

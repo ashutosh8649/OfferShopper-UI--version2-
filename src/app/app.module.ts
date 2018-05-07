@@ -54,13 +54,15 @@ import { HelpComponent } from './components/help/help.component';
 import { LocationService } from './services/location.service';
 import { LoginService } from './services/login.service';
 import { BeASellerComponent } from './components/user/be-a-seller/be-a-seller.component';
+import { WheelComponent } from './components/wheel/wheel.component';
 
 const appRoutes:Routes=[
 
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
-  { path: 'homepage', component: HomePageComponent },
+  { path: '', redirectTo: '/homepage/Delhi', pathMatch: 'full' },
+  { path: 'homepage/:id', component: HomePageComponent },
   { path:'user/:id',component:UserComponent },
   { path:'login',component:LoginRegisterFrontpageComponent },
+  { path:'contact',component:ContactUsComponent },
   { path:'vendor-register',component:VendorRegisterComponent },
   { path:'product/:id',component: ProductPageComponent},
   { path:'forgot-password',component: ForgotPasswordComponent},
@@ -105,7 +107,8 @@ const appRoutes:Routes=[
     SeachResultsComponent,
     SearchBarComponent,
     HelpComponent,
-    BeASellerComponent
+    BeASellerComponent,
+    WheelComponent
   ],
   imports: [
     IonRangeSliderModule,

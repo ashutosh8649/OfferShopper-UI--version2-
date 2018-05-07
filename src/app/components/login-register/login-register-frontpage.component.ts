@@ -1,4 +1,4 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit,Inject,ViewContainerRef } from '@angular/core';
 import {FormGroup, FormControl, Validators,FormBuilder} from '@angular/forms';
 import {Router} from '@angular/router';
 import {loginDetails} from './loginDetails';
@@ -6,12 +6,13 @@ import {registerDetails} from './registerDetails';
 import {LoginService} from '../../services/login.service';
 import {RegisterService} from '../../services/register.service';
 import {vendorDetails} from './vendorDetails';
+import { MessageService } from './../../services/message.service';
 
 @Component({
   selector: 'app-login-register-frontpage',
   templateUrl: './login-register-frontpage.component.html',
   styleUrls: ['./login-register-frontpage.component.css'],
-  providers:[ RegisterService,LoginService ]
+  providers:[ RegisterService,MessageService,LoginService ]
 })
 export class LoginRegisterFrontpageComponent implements OnInit {
 
@@ -31,12 +32,15 @@ export class LoginRegisterFrontpageComponent implements OnInit {
   tempPassword:String;
   isAlredyExist:boolean=false;
   status: boolean = false;
+  private userLocation: string = "Delhi";
 
   constructor(
     @Inject(FormBuilder)  fb: FormBuilder,
     private loginService:LoginService,
     private registerService:RegisterService,
-    private router:Router
+    private router:Router,
+    private messageService:MessageService,
+    private _vcr:ViewContainerRef
     ) {
     this.fb=fb;
     this.registerForm=this.fb.group({
@@ -52,6 +56,7 @@ export class LoginRegisterFrontpageComponent implements OnInit {
       username : new FormControl('', [Validators.required, Validators.email]),
       password : new FormControl('', [Validators.required]),
     });
+    this.userLocation = localStorage.getItem("loc");
   }
 
   onChanges(): void {
@@ -71,8 +76,10 @@ export class LoginRegisterFrontpageComponent implements OnInit {
     }
 
     this.loginService.loginWithEmailId(username,result).subscribe((res) =>{
-      console.log("Login component success");
+
       this.router.navigate(['/homepage']);
+      this.router.navigate(['/homepage',this.userLocation]);
+
     }, (res:Response) =>{
       if(res.status==401){
         alert("Unauthorized User");
@@ -124,20 +131,17 @@ registerUser(){
   };
 
   this.registerService.register(body).subscribe((res) =>{
-      alert("Link sent to your account for verification");
-      console.log(res);
-this.registerForm.reset();
+    this.messageService.showSuccessToast(this._vcr,"Verfification link sent your Email Id");
+    this.registerForm.reset();
   }, (res:Response) =>{
-    console.log("In Error");
-    console.log(res);
     if(res.status==401 || res.status==409){
-      alert("Username already exists");
+      this.messageService.showErrorToast(this._vcr,"Username already exists");
     }
     else if(res.status==500){
       alert("Internal server error");
     }
     else if(res.status==201){
-      alert("Successfully registered");
+      this.messageService.showSuccessToast(this._vcr,"Successfully Registered");
     }
     else if(res.status==404){
       alert("Service Not Found");

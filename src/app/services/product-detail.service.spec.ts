@@ -1,4 +1,3 @@
-
 import { TestBed, inject, async, getTestBed, ComponentFixture } from '@angular/core/testing';
 import {MockBackend, MockConnection} from '@angular/http/testing';
 import {HttpModule, ResponseOptions } from '@angular/http';

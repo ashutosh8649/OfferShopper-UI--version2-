@@ -20,6 +20,7 @@ export class ProductPageComponent implements OnInit {
   offerId: string;
 
   @Output() success = new EventEmitter<any>();
+  public shop: string;
   public searchedProduct: string;
   public productName : string;
   public productDescription : string;
@@ -47,7 +48,6 @@ export class ProductPageComponent implements OnInit {
     this.vendorId=this.route.snapshot.params.id;
     this.offerId = this.route.snapshot.params.offerId;
     if( this.vendorId && this.offerId) {
-      alert(this.offerId)
       this.getOfferById();
     }
     else {
@@ -66,6 +66,7 @@ export class ProductPageComponent implements OnInit {
      this.productOriginalPrice=res[0].originalPrice;
      this.productDiscount=res[0].offerDiscount;
      this.productSeller=res[0].userId;
+     this.shop=res[0].address.name;
      console.log(res[0].offerTitle);
    },(error) =>{
 
@@ -76,6 +77,7 @@ export class ProductPageComponent implements OnInit {
    this.productDetailService.getOfferById(this.offerId)
    .subscribe((res) =>{
      this.offer=res;
+     console.log("offer");
      console.log(res);
      this.productName=res.offerTitle;
      this.productDescription=res.offerDescription;
@@ -83,6 +85,7 @@ export class ProductPageComponent implements OnInit {
      this.productSeller=res.userId;
      this.productOriginalPrice=res.originalPrice;
      this.productDiscount=res.discount;
+     this.shop=res.address.name;
      this.category=res.offerCategories;
      
      this.searchRelatedProducts(this.category);
@@ -148,8 +151,12 @@ export class ProductPageComponent implements OnInit {
  }
 
  searchRelatedProducts(category){
+   console.log(category);
    this.productDetailService.searchRelatedProducts(category).subscribe((res) =>{
-     this.relatedProducts=res;
+    console.log("related"); 
+    console.log(res);
+    this.relatedProducts=res;
+
    },(error)=>{})
  }
 
