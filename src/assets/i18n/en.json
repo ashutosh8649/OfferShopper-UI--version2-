@@ -1,12 +1,45 @@
 {
-  "HOME": {
-    "SELECT": "Change language"
+  "HOMEPAGE": {
+    "CATEGORIES": {
+        "CATEGORY": "Categories",
+        "ALL": "All",
+        "SPORTS": "Sports",
+        "CLOTHES": "Clothing",
+        "FOOD": "Food"
+    },
+    "PAGE": {
+        "PREV": "Previous",
+        "NEXT": "Next",
+        "SEARCH": "Search for your favorite deals here"
+    },
+    "PRODUCT-LIST": {
+        "RATING": "Rating",
+        "MRP": "MRP:",
+        "RS": "₹",
+        "UPDATE": "Last updated: "
+    },
+    "PRODUCT-HEADER": {
+        "OFF": "% OFF",
+        "NO-DATA": "Sorry... No deal at your location"
+    }
+  },
+  "PRODUCT-PAGE": {
+    "BACK": "Back",
+    "ORIGINAL": "Original Price:",
+    "DISCOUNT": "Discount",
+    "PER": "%",
+    "SELLER": "Seller Name: ",
+    "VALIDITY": "Validity; ",
+    "WISHLIST": "Add to Wishlist",
+    "CARRYBAG": "Add to Carrybag",
+    "ALSO-BUY": "Customers who bought this item also bought"
   },
   "FOOTER": {
     "GETINTOUCH": "Get in touch",
     "CONTACT": "Any questions? Let us know on mail: offershopper@gmail.com, or call us on (+91) 9078563412.",
     "CATEGORIES": {
         "CATEGORY": "Categories",
+        "ALL": "All",
         "SPORTS": "Sports",
         "CLOTHES": "Clothes",
         "FOOD": "Food"

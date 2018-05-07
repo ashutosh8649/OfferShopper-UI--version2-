@@ -1,12 +1,45 @@
 {
-  "HOME": {
-    "SELECT": "भाषा बदलो"
+   "HOMEPAGE": {
+    "CATEGORIES": {
+        "CATEGORY": "वर्ग",
+        "ALL": "All",
+        "SPORTS": "Sports",
+        "CLOTHES": "Clothing",
+        "FOOD": "Food"
+    },
+    "PAGE": {
+        "PREV": "पूर्व",
+        "NEXT": "अगला",
+        "SEARCH": "यहां अपने पसंदीदा सौदों के लिए खोजें"
+    },
+    "PRODUCT-LIST": {
+        "RATING": "रेटिंग",
+        "MRP": "एमआरपी:",
+        "RS": "₹",
+        "UPDATE": "अंतिम अद्यतन: "
+    },
+    "PRODUCT-HEADER": {
+        "OFF": "% छूट",
+        "NO-DATA": "क्षमा करें ... आपके स्थान पर कोई सौदा नहीं है"
+    }
+  },
+  "PRODUCT-PAGE": {
+    "BACK": "Back",
+    "ORIGINAL": "Original Price:",
+    "DISCOUNT": "Discount",
+    "PER": "%",
+    "SELLER": "Seller Name: ",
+    "VALIDITY": "Validity; ",
+    "WISHLIST": "Add to Wishlist",
+    "CARRYBAG": "Add to Carrybag",
+    "ALSO-BUY": "Customers who bought this item also bought"
   },
   "FOOTER": {
     "GETINTOUCH": "संपर्क करे",
     "CONTACT": "कोई सवाल? हमें मेल पर बताएं: offershopper@gmail.com, या  हमें कॉल करें (+ 9 1) 9078563412।",
     "CATEGORIES": {
         "CATEGORY": "वर्ग",
+        "ALL": "सब",
         "SPORTS": "खेल",
         "CLOTHES": "परिधान",
         "FOOD": "भोजन"
