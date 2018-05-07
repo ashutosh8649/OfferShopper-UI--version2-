@@ -16,7 +16,7 @@ export class LocationComponent implements OnInit {
   languages = Language.languages;
   private location: string;
   private mainUrl: string;
-
+  
   constructor(
     private locationService: LocationService, 
     public translate: TranslateService,
@@ -45,7 +45,7 @@ getlocation(){
   }  
   function error() {    
     if(userMainUrl == "homepage") {
-      _router.navigate(['/',userMainUrl,"Delhi"]);
+      _router.navigate(['/',userMainUrl,"Delhi"]);;
     }
     console.log("User refused access to his location");
   }  
@@ -90,7 +90,6 @@ ngOnInit(){
     }
     else {
       this.obj.a=value.trim();
-      console.log(this.obj.a);
       this.homeResultRelatedToLocation(this.obj.a); 
     }
   }
@@ -101,7 +100,6 @@ ngOnInit(){
 homeResultRelatedToLocation(userLocation) {
   this.location = location.pathname;
   this.mainUrl = (this.location.split('/'))[1];
-  console.log(this.mainUrl);
   if(this.mainUrl=="homepage")
     this.router.navigate(['/',this.mainUrl,userLocation]);
 }
