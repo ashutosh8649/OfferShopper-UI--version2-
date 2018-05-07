@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Cities}  from '../../../configs/cities.config';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from "@angular/router";
+import { LocationService } from "../../../services/location.service";
 
 @Component({
 	selector: 'app-header',
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
 	constructor(
     location: Location,
-    private router: Router
+    private router: Router,
+    private locationService: LocationService
     ) { }
 
     cities = Cities.citiesName; 
@@ -25,9 +27,11 @@ export class HeaderComponent implements OnInit {
     tempselected={a:"Gurgaon"}
 
     fav(tempselected){
+      // console.log(tempselected.a);
     this.selected.a=tempselected.a;
     let value = tempselected.a;
     localStorage.setItem("loc",tempselected.a);
+    this.locationService.updateLocation();
     this.location = location.pathname;
     this.mainUrl = (this.location.split('/'))[1];
     if(this.mainUrl=="homepage")
@@ -35,10 +39,9 @@ export class HeaderComponent implements OnInit {
     }
     
 	ngOnInit() {
-
 		  this.cities.sort(function(a,b){
           return a.localeCompare(b);
-       });
+       });      
 	}
 
   getLocation(event) {
