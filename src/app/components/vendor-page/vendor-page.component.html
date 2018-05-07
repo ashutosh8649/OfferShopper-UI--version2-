@@ -6,6 +6,7 @@
         <div class="d-flex">
           <div class="col-lg-12">
             <h2 class="text-secondary my-5">{{shopName}}</h2>
+            <p class="text-secondary address">{{street}}, {{city}}, {{state}}, {{zip}}</p>
           </div>
           <div class="col-lg-12 text-right">
             <button class="btn my-5 text-right btn-subs" (click)="subscribe()">Subscribe</button>
@@ -18,7 +19,7 @@
         <div class="d-flex">
           <div class="col-lg-12">
             <h2 class="text-secondary my-5">{{shopName}}</h2>
-            <p class="text-secondary address">{{street}} {{city}} {{state}} {{zip}}</p>
+            <p class="text-secondary address">{{street}}, {{city}}, {{state}}, {{zip}}</p>
           </div>
           <div class="col-lg-12 text-right">
             <button class="btn my-5 text-right btn-subs mx-5" (click)="notLogin()">Subscribe</button>
@@ -75,7 +76,7 @@
     </div>
 
       <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="tab-pane fade show active mb-5" id="home" role="tabpanel" aria-labelledby="home-tab">
       <div *ngIf="offersList.length">
         <div class="container">
           <div class="row">
@@ -88,8 +89,13 @@
                 <img class="card-img card-w" src="../../../../assets/card.jpeg" alt="Card image">
                 <div class="card-body card-data">
                   <div class="row">
-                    <div class="col-12">
+                    <div class="col-8">
                       <span class="card-heading">{{result.offerTitle}}</span>
+                    </div>
+                    <div class="col-4">
+                      <!-- <div class="mx-3"> -->
+                      <span class="fa fa-star mx-2"></span>{{result.offerRating}}
+                    <!-- </div> -->
                     </div>
                     <div class="col-12">
                       <span class="card-price">₹<del>{{result.originalPrice}}</del></span>
@@ -133,7 +139,7 @@
         </div>
       </div>
     </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade mb-5" id="profile" role="tabpanel" aria-labelledby="profile-tab">
      <div class="container">
       <div class="row">
         <div class="col-md-4 card-group mb-3" *ngFor=" let result of feedbacks | paginate:{itemsPerPage : 6, currentPage : p}">
