@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA }      from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HelpComponent } from './help.component';
 import { BrowserModule, By } from '@angular/platform-browser';
@@ -15,7 +14,6 @@ describe('HelpComponent', () => {
    beforeEach(async(() => {
    TestBed.configureTestingModule({
      declarations: [ HelpComponent ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
      imports: [
        BrowserModule,
        HttpClientModule,

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LocationService } from '../../../../services/location.service';
-//import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 import { BrowserModule, By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DebugElement,ViewContainerRef } from '@angular/core';
@@ -10,6 +10,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import { LocationComponent } from './location.component';
+
 
 describe('LocationComponent', () => {
   let component: LocationComponent;
@@ -35,7 +36,7 @@ describe('LocationComponent', () => {
       })
      ],
      providers:[{
-       provide :  [ LocationService] 
+       provide :  [ TranslateService,LocationService ] 
      }]
    })
    .compileComponents();

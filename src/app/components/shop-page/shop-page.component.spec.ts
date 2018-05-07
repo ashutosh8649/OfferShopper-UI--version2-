@@ -15,7 +15,7 @@ import { ShopPageComponent } from './shop-page.component';
 import { SearchService } from '../../services/search.service';
 import { UserService } from '../../services/user.service';
 
-fdescribe('ShopPageComponent', () => {
+describe('ShopPageComponent', () => {
   let component: ShopPageComponent;
   let fixture: ComponentFixture<ShopPageComponent>;
     let debug: DebugElement;

@@ -17,6 +17,8 @@ import { MessageService } from './../../services/message.service';
 describe('ProductPageComponent', () => {
   let component: ProductPageComponent;
   let fixture: ComponentFixture<ProductPageComponent>;
+  let debug: DebugElement;
+  let el: HTMLElement;
 
      beforeEach(async(() => {
    TestBed.configureTestingModule({
@@ -27,11 +29,11 @@ describe('ProductPageComponent', () => {
        HttpModule,
        RouterTestingModule,
          ToastModule.forRoot(),
-      //  TranslateModule.forRoot({
-      //     provide: TranslateLoader,
-      //     useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
-      //     deps: [Http]
-      // })
+       TranslateModule.forRoot({
+          provide: TranslateLoader,
+          useFactory: (http: Http) => new TranslateStaticLoader(http, 'public/assets/i18n', '.json'),
+          deps: [Http]
+      })
      ],
      providers:[{
        provide :  [ProductDetailService,WishlistService,CarrybagService,AuthorizationService,MessageService] 
@@ -43,10 +45,18 @@ describe('ProductPageComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductPageComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+   fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+ //    it('should call the searchProduct method',() => {
+ //   spyOn(component,'searchProduct');
+ //   el=fixture.debugElement.query(By.css('button')).nativeElement;
+ //   el.click();
+ //   expect(component.searchProduct).toHaveBeenCalledTimes(0);
+ // })
+
 });

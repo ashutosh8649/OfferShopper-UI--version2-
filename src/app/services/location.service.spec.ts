@@ -7,7 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { LocationService } from './location.service';
 
-fdescribe('LocationService', () => {
+describe('LocationService', () => {
 let mockBackend: MockBackend;
 
   beforeEach(async() => {

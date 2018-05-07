@@ -7,7 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { AuthorizationService } from './authorization.service';
 
 
-fdescribe('AuthorizationService', () => {
+describe('AuthorizationService', () => {
 let mockBackend: MockBackend;
 
   beforeEach(async() => {

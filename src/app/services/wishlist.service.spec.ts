@@ -7,7 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { WishlistService } from './wishlist.service';
 
-fdescribe('WishlistService', () => {
+describe('WishlistService', () => {
 	let mockBackend: MockBackend;
 
 	beforeEach(async() => {

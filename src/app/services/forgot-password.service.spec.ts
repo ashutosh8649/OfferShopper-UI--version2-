@@ -7,7 +7,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { ForgotPasswordService } from './forgot-password.service';
 
-fdescribe('ForgotPasswordService', () => {
+describe('ForgotPasswordService', () => {
  let mockBackend: MockBackend;
 
   beforeEach(async() => {

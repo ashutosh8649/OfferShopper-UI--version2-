@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { LoginRegisterFrontpageComponent } from './login-register-frontpage.component';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from "ng2-translate";
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
 
 describe('LoginRegisterFrontpageComponent', () => {
   let component: LoginRegisterFrontpageComponent;
@@ -25,6 +26,7 @@ describe('LoginRegisterFrontpageComponent', () => {
        HttpModule,
        RouterTestingModule,
        FormsModule,
+       ToastModule.forRoot(),
        ReactiveFormsModule,
        TranslateModule.forRoot({
           provide: TranslateLoader,
@@ -63,7 +65,7 @@ describe('LoginRegisterFrontpageComponent', () => {
    el=fixture.debugElement.query(By.css('button')).nativeElement;
    el.click();
    expect(component.registerUser).toHaveBeenCalledTimes(0);
- })
+ });
 
    it('loginForm should be invalid',() => {
    component.loginForm.controls['username'].setValue('');
