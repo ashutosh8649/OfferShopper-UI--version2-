@@ -62,6 +62,7 @@ const appRoutes:Routes=[
   { path: 'homepage/:id', component: HomePageComponent },
   { path:'user/:id',component:UserComponent },
   { path:'login',component:LoginRegisterFrontpageComponent },
+  { path:'contact',component:ContactUsComponent },
   { path:'vendor-register',component:VendorRegisterComponent },
   { path:'product/:id',component: ProductPageComponent},
   { path:'forgot-password',component: ForgotPasswordComponent},
