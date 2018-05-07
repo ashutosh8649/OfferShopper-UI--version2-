@@ -24,15 +24,15 @@
     }
   },
   "PRODUCT-PAGE": {
-    "BACK": "Back",
-    "ORIGINAL": "Original Price:",
-    "DISCOUNT": "Discount",
+    "BACK": "वापस",
+    "ORIGINAL": "मूल मूल्य:",
+    "DISCOUNT": "छूट",
     "PER": "%",
-    "SELLER": "Seller Name: ",
-    "VALIDITY": "Validity; ",
-    "WISHLIST": "Add to Wishlist",
-    "CARRYBAG": "Add to Carrybag",
-    "ALSO-BUY": "Customers who bought this item also bought"
+    "SELLER": "विक्रेता का नाम: ",
+    "VALIDITY": "वैधता: ",
+    "WISHLIST": "विशलिस्ट में जोड़ें",
+    "CARRYBAG": "कैरीबैग में जोड़ें",
+    "ALSO-BUY": "जिन ग्राहकों ने इस आइटम को खरीदा, वे भी इन्हें खरीदा"
   },
   "FOOTER": {
     "GETINTOUCH": "संपर्क करे",

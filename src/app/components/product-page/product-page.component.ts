@@ -19,6 +19,7 @@ export class ProductPageComponent implements OnInit {
   offerId: string;
 
   @Output() success = new EventEmitter<any>();
+  public shop: string;
   public searchedProduct: string;
   public productName : string;
   public productDescription : string;
@@ -64,6 +65,7 @@ export class ProductPageComponent implements OnInit {
      this.productOriginalPrice=res[0].originalPrice;
      this.productDiscount=res[0].offerDiscount;
      this.productSeller=res[0].userId;
+     this.shop=res[0].address.name;
      console.log(res[0].offerTitle);
    },(error) =>{
 
@@ -82,6 +84,7 @@ export class ProductPageComponent implements OnInit {
      this.productSeller=res.userId;
      this.productOriginalPrice=res.originalPrice;
      this.productDiscount=res.discount;
+     this.shop=res.address.name;
      this.category=res.offerCategories;
      
      this.searchRelatedProducts(this.category);
