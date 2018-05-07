@@ -88,8 +88,8 @@ img {
 
 .card-img-top {
   width: 100%;
-  height: auto; 
-  border-radius: 0.25rem; 
+  height: auto;
+  border-radius: 0.25rem;
   transition: .3s;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
@@ -100,7 +100,7 @@ img {
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px); }
 .textWithblurredImage {
-  
+
 }
 /*.textWithblurredImage :img{
   width: 100%;
@@ -133,10 +133,10 @@ img {
   font-size: 1.5em;
 }
 #b0,#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9,#b10,#b11{
-    color: black; 
+    color: black;
     width: 50%;
     height: 2.2em;
-    top: 55%; 
+    top: 55%;
     align-self: center;
     background-color: #ddd;
     border-radius: 2em;

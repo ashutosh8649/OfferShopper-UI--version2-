@@ -110,6 +110,11 @@ del {
 	color: #018b8b;
 }
 
+
+.feedback-img {
+	height: 10rem;
+}
+
 .card-w{
 	cursor: pointer;
 	max-width: 18rem;
