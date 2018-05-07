@@ -11,7 +11,7 @@ import {vendorDetails} from './vendorDetails';
   selector: 'app-login-register-frontpage',
   templateUrl: './login-register-frontpage.component.html',
   styleUrls: ['./login-register-frontpage.component.css'],
-  providers:[ RegisterService ]
+  providers:[ RegisterService,LoginService ]
 })
 export class LoginRegisterFrontpageComponent implements OnInit {
 
@@ -59,20 +59,6 @@ export class LoginRegisterFrontpageComponent implements OnInit {
       this.isAlredyExist=false;
     });
   }
-
-  validateUsername(){
-    let body= {
-      "email": this.registerForm.get('username').value
-    };
-    this.registerService.register(body).subscribe((res) => {
-    },
-    (res:Response) => {
-      if(res.status==409) {
-        this.isAlredyExist=true;
-      }
-    });
-  }
-
 
   login(){
     let username=this.loginForm.get('username').value;

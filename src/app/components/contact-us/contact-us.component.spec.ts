@@ -1,17 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { BrowserModule, By } from '@angular/platform-browser';
 import { ContactUsComponent } from './contact-us.component';
 
 describe('ContactUsComponent', () => {
   let component: ContactUsComponent;
   let fixture: ComponentFixture<ContactUsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ContactUsComponent ]
-    })
-    .compileComponents();
-  }));
+   beforeEach(async(() => {
+   TestBed.configureTestingModule({
+     declarations: [ ContactUsComponent ],
+     imports: [
+       BrowserModule
+     ]
+   })
+   .compileComponents();
+ }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ContactUsComponent);
