@@ -96,17 +96,18 @@
                 
                 <div class="col-sm-4 form-group">
                   <label>State</label>
-                  <select name=slist formControlName="state" class="form-control" id="state">
+                  <select (change)="findRelevantCitiesHome()" name=slist   formControlName="state" class="form-control" id="state">
                    <option value="">----Select State------</option>
                    <option *ngFor="let state of states" value={{state}}>{{ state }}</option>
                  </select>
                </div>
+
                <div class="col-sm-4 form-group">
                 <label>City</label>
                 
                 <select name=slist formControlName="city" class="form-control" id="state">
                  <option value="">----Select City------</option>
-                 <option *ngFor="let city of cities" value={{city}}>{{ city }}</option>
+                 <option *ngFor="let city of citiesHome" value={{city}}>{{ city }}</option>
                </select>
              </div>
              <div class="col-sm-4 form-group">
@@ -138,7 +139,7 @@
 
                 <div class="col-sm-4 form-group">
                   <label>State</label>
-                  <select name=slist formControlName="vendorState" class="form-control" id="VendorState">
+                  <select (change)="findRelevantCitiesShop()" name=slist formControlName="vendorState" class="form-control" id="VendorState">
                    <option value="">----Select State------</option>
                    <option *ngFor="let state of states" value={{state}}>{{ state }}</option>
                    
@@ -153,7 +154,7 @@
                 <label>City</label>
                 <select name=slist formControlName="vendorCity" class="form-control" id="state">
                  <option value="">----Select City------</option>
-                 <option *ngFor="let city of cities" value={{city}}>{{ city }}</option>
+                 <option *ngFor="let city of citiesShop" value={{city}}>{{ city }}</option>
                </select>
                <div *ngIf="form.get('vendorCity').touched && form.get('vendorCity').invalid" class="alert-msg">
                 <div *ngIf="form.get('vendorCity').hasError('required')">
