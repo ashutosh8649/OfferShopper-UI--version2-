@@ -85,6 +85,18 @@
               <div class="card card-w text-dark m-5" [routerLink]="['/', 'product',result.userId,result.offerId]">
                 <div class="card-img-overlay">
                   <span class="badge badge-pill badge-info card-discount p-3">{{result.discount}}% OFF</span>
+                  <!-- <div> -->
+                    <div class="btn-group" *ngIf="user; else elseBlock">
+                      <button class="btn btn-dark ml-2 mr-2 badge-info" type="button" (click)="addToCarrybag(result)"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                      <button class="btn btn-dark badge-info" type="button" (click)="addToWishlist(result)"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                    </div>
+                    <ng-template #elseBlock>
+                      <div class="btn-group btn-group-justified">
+                        <button class="btn btn-dark ml-2 mr-2 badge-info" type="button" (click)="notLogin()"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                        <button class="btn btn-dark badge-info" type="button" (click)="notLogin()"><i class="fa fa-shopping-basket" aria-hidden="true"></i></button>
+                      </div>
+                    </ng-template>
+                  <!-- </div> -->
                 </div>
                 <img class="card-img card-w" src="../../../../assets/card.jpeg" alt="Card image">
                 <div class="card-body card-data">
