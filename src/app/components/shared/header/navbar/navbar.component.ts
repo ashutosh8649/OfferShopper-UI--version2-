@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
 			this.login = status;
 			this.getUserId();
 		});
-			this.getUserId();
+		this.getUserId();
 	}
 
 	logout(){
@@ -60,8 +60,8 @@ export class NavbarComponent implements OnInit {
 	getUserId() {
 		this.authorizationService.getUserId().subscribe((res:any) =>{
 			this.userId = (res.text().split(','))[2];
-			this.user = (this.userId.split('@'))[0];
-			console.log(this.user);
+			if(this.userId) 
+				this.user = (this.userId.split('@'))[0];			
 		}, (error) =>{
 		})
 	}
@@ -69,5 +69,5 @@ export class NavbarComponent implements OnInit {
 	loadUserprofile(){
 		this.isLogin();
 		this.router.navigate(['/user/userdetails']);
-		}
+	}
 }
