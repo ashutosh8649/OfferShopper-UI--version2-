@@ -18,7 +18,7 @@
         <div class="d-flex">
           <div class="col-lg-12">
             <h2 class="text-secondary my-5">{{shopName}}</h2>
-            <p class="text-secondary address">{{street}},{{city}},{{state}},{{zip}}</p>
+            <p class="text-secondary address">{{street}} {{city}} {{state}} {{zip}}</p>
           </div>
           <div class="col-lg-12 text-right">
             <button class="btn my-5 text-right btn-subs mx-5" (click)="notLogin()">Subscribe</button>
@@ -81,7 +81,7 @@
           <div class="row">
             <div class="col-md-4 card-group mb-3 text-dark" *ngFor=" let result of offersList | paginate:{itemsPerPage : 6, currentPage : p}">
               {{productPrice(result.originalPrice,result.discount)}}
-              <div class="card card-w text-dark m-5" [routerLink]="['/', 'product',offer.userId,offer._id]">
+              <div class="card card-w text-dark m-5" [routerLink]="['/', 'product',result.userId,result.offerId]">
                 <div class="card-img-overlay">
                   <span class="badge badge-pill badge-info card-discount p-3">{{result.discount}}% OFF</span>
                 </div>
