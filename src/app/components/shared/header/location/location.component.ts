@@ -16,7 +16,7 @@ export class LocationComponent implements OnInit {
   languages = Language.languages;
   private location: string;
   private mainUrl: string;
-
+  
   constructor(
     private locationService: LocationService, 
     public translate: TranslateService,
@@ -38,11 +38,20 @@ export class LocationComponent implements OnInit {
 getlocation(){
   var varobj=this.obj;
   let locationService=this.locationService;
+  let _router = this.router;
+  let userMainUrl = (location.pathname.split('/'))[1];
   if (!navigator.geolocation){
     return;
   }  
-  function error() {
-    console.log("error");
+  
+  function error() {    
+    if(userMainUrl == "homepage") {
+      if(localStorage.getItem("loc"))
+        _router.navigate(['/',userMainUrl,localStorage.getItem("loc")]);
+      else
+        _router.navigate(['/',userMainUrl,"Delhi"]);
+    }
+    console.log("User refused access to his location");
   }  
   function get(varobj){
     navigator.geolocation.getCurrentPosition((position)=>{
@@ -61,7 +70,9 @@ getlocation(){
           varobj.a=result[a-3];
         console.log(Latitude+" "+Longitude+" "+varobj.a);
         localStorage.setItem("loc",varobj.a);
-        this.homeResultRelatedToLocation(varobj.a);
+        if(userMainUrl == "homepage") {
+          _router.navigate(['/',userMainUrl,varobj.a]);
+        }
       }, (error) =>{ console.log("error")    
     })
 
@@ -92,7 +103,8 @@ ngOnInit(){
 homeResultRelatedToLocation(userLocation) {
   this.location = location.pathname;
   this.mainUrl = (this.location.split('/'))[1];
-  console.log(this.mainUrl);
+  if(!this.mainUrl)
+    this.router.navigate(['/homepage',userLocation]);
   if(this.mainUrl=="homepage")
     this.router.navigate(['/',this.mainUrl,userLocation]);
 }
