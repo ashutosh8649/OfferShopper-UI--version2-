@@ -31,7 +31,11 @@
               <div class="form-group">
                 <a class="text-pride" routerLink="/forgot-password">{{ 'LOGIN.FORGOTPASSWORD' | translate }}</a>
               </div>
+              <div class="row">
               <button type="button" class="btn btn-secondary btn-login" [disabled]="loginForm.invalid" (click)="login()">{{ 'LOGIN.TITLE1' | translate }}</button>
+              <!--                 google Button
+ -->                 <div id="googleBtn">Google</div>
+            </div>
             </form>
           </div>
         </div>

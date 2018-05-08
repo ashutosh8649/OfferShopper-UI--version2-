@@ -55,6 +55,7 @@ import { LocationService } from './services/location.service';
 import { LoginService } from './services/login.service';
 import { BeASellerComponent } from './components/user/be-a-seller/be-a-seller.component';
 import { WheelComponent } from './components/wheel/wheel.component';
+import { GooglesigninService } from './services/googlesignin.service';
 
 const appRoutes:Routes=[
 
@@ -133,7 +134,7 @@ const appRoutes:Routes=[
      apiKey: 'AIzaSyBeSuJbAPirjvZ0mEDxd-g05P5_f6gkAlQ'
    })
   ],
-  providers: [UserService, WishlistService, CarrybagService, SearchService, OffersService, AuthorizationService, VerifyEmailService,UpdatePasswordService, LocationService,  LoginService],
+  providers: [UserService, WishlistService, CarrybagService, SearchService, OffersService, AuthorizationService, VerifyEmailService,UpdatePasswordService, LocationService,  LoginService, GooglesigninService],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
