@@ -14,8 +14,9 @@
               </div>
               <div *ngIf="form.get('firstName').hasError('pattern')">
                 {{ 'LOGIN.INVALID' | translate }} {{ 'USER.SELLER.FIRST-NAME' | translate }}
-              </div></div>
+              </div>
             </div>
+          </div>
             <div class="col-sm-6 form-group">
               <label>{{ 'USER.SELLER.LAST-NAME' | translate }}</label>
               <input type="text" placeholder="{{ 'USER.SELLER.LAST-NAME' | translate }}" formControlName="lastName" class="form-control">
@@ -44,7 +45,7 @@
             </div>
 
             <div class="col-sm-5 form-group col-md-6">
-              <label></label>
+              <label>{{ 'LOGIN.PASSWORD' | translate }}</label>
               <input type="password" placeholder="{{ 'LOGIN.PASSWORD' | translate }}" formControlName="password" class="form-control" >
               <div *ngIf="form.get('password').touched && form.get('password').invalid" class="alert-msg">
                 <div *ngIf="form.get('password').hasError('required')">
@@ -72,18 +73,18 @@
           </div>
           <div class="form-group col-sm-4">
             <label>{{ 'USER.SELLER.DOB' | translate }}</label>
-            <input type="date" id="birthDate" formControlName="DOB" class="form-control"> </div>
-
-
-
+            <input type="date" id="birthDate" formControlName="DOB" class="form-control">
+           </div>
             <div class="form-group col-sm-3">
               <label>{{ 'USER.SELLER.GENDER.TITLE' | translate }}</label>
               <div class="form-inline">
                 <label class="form-control">
-                  <input type="radio" name="gender" value='Male' formControlName="gender">{{ 'USER.SELLER.GENDER.MALE' | translate }}</label>
+                  <input type="radio" name="gender" value='Male' formControlName="gender">{{ 'USER.SELLER.GENDER.MALE' | translate }}
+                </label>
                   <label class="form-control">
-                    <input type="radio" name='gender' value='Female' formControlName="gender">{{ 'USER.SELLER.GENDER.FEMALE' | translate }}</label>
-                  </div> 
+                    <input type="radio" name='gender' value='Female' formControlName="gender">{{ 'USER.SELLER.GENDER.FEMALE' | translate }}
+                  </label>
+                </div> 
                 </div>
               </div>
               
@@ -121,7 +122,8 @@
            </div>
            <div class="row">
             <div class="checkbox col-sm-2">
-              <input type="checkbox" formControlName="sameAddress" (click)="setAddress()" id="SameCheckbox" value="SameAsAbove"> {{ 'USER.SELLER.ADDRESS.SAME' | translate }}</div>
+              <input type="checkbox" formControlName="sameAddress" (click)="setAddress()" id="SameCheckbox" value="SameAsAbove"> {{ 'USER.SELLER.ADDRESS.SAME' | translate }}
+            </div>
             </div>
             <br>
             <div class="form-group">
@@ -132,7 +134,8 @@
                 <div *ngIf="form.get('vendorAddress').hasError('required')">
                   {{ 'USER.SELLER.ADDRESS.TITLE' | translate }}{{ 'LOGIN.REQ' | translate }}
                 </div>
-              </div></div>
+              </div>
+            </div>
 
               <div class="row">
                 
@@ -202,9 +205,8 @@
         </div>
         <!--  -->
       </div>
-    </div>
+            </div>
+      </div>
   </form>
 </div>
 </div>
-
-
