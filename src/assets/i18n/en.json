@@ -15,7 +15,8 @@
       "CLOSE": "Close",
       "ADD-FEEDBACK": "Add Feedback",
       "GEN-COUP": "Generate Coupon",
-      "SEE-MORE": "See More"
+      "SEE-MORE": "See More",
+      "SUBSCRIBE": "Subscribe"
     },
     "HOMEPAGE": {
       "CATEGORIES": {
@@ -163,7 +164,11 @@
         "PASSWORDCON": "Confirm password is required",
         "ASVENDOR": "Register as Vendor",
         "FIND-YOU": "Find your Account",
-        "UPDATEPASS": "Update Password"
+        "UPDATEPASS": "Update Password",
+        "REQ": "required",
+        "INVALID": "Invalid",
+        "ERROR-DIG-LESS": "Less than 10 digits",
+        "ERROR-DIG-MORE": "More than 10 digits"
     },
     "SHOP-PAGE": {
       "SORTING": {
@@ -184,6 +189,7 @@
       "ADD-OFFER": "Add Offers",
       "BE-SELLER": "Be a Seller",
       "EMPTY": "Empty",
+      "OFFERS": "Offers",
 
       "OFFER": {
           "VALIDATE-COUPON": "Validate Coupon",
@@ -203,7 +209,14 @@
           "FIRST-NAME": "First Name",
           "LAST-NAME": "Last Name",
           "CONTACT": "Contact Number",
+          "VENDOR-CONTACT": "Vendor Contact Number",
           "EMAIL": "Email Id",
+          "DOB": "DOB",
+          "GENDER": {
+              "TITLE": "Gender",
+              "MALE": "Male",
+              "FEMALE": "Female"
+          },
           "ADDRESS": {
               "TITLE": "Address",
               "SHOP": "Shop's Address",
@@ -211,8 +224,11 @@
               "SHOP-NAME": "Shop Name",
               "CITY": "City",
               "STATE": "State",
-              "ZIP": "Zip"
-          }
+              "ZIP": "Zip",
+              "SELECT-CITY": "----Select City------",
+              "SELECT-STATE": "----Select State------"
+          },
+          "SUBSCRIBE": "Subscribe"
       },
       "CARRYBAG-COMP": {
         "PRODUCT": "PRODUCT",
