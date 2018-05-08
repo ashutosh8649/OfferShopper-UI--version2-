@@ -1,3 +1,30 @@
+@media (min-width: 576px) {
+	.card-w{
+		cursor: pointer;
+		max-width: 18rem;
+		max-height: 18rem;
+	}
+
+	.card-data {
+		margin-left: -1.1rem;
+		font-family: 'Julius Sans One', sans-serif;
+		margin-top: -0.5rem;
+	}
+
+	.card-discount {
+		font-family: 'Poiret One', cursive;
+	}
+
+	.card-heading {
+		font-size: 0.6rem;
+	}
+
+	.card-discounted-price {
+		color:red;
+	}
+
+}
+
 .card-rating {
 	border-radius: 0px 5px 0px 0px;
 	position: absolute;

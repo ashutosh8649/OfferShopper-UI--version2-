@@ -34,19 +34,19 @@
       </button>
     </li>
 
-    <li> 
+    <li>
      <button id="_setImg"  (click)="set('Chandigarh')" data-dismiss="modal">
        <span>
          <img src="https://cdn.iconscout.com/public/images/icon/premium/png-256/chandigarh-openhand-monument-architecture-symbol-39a0c693561273cd-256x256.png" class="maincities" alt="Chandigarh">
          <p>{{ 'HEADER.LOCATION.CITIES.1' | translate }}</p>
        </span>
      </button>
-   </li> 
+   </li>
 
  </ul>
 
 
- 
+
 </div>
 
 
@@ -60,7 +60,7 @@
 </div>
 </div>
 </div>
-<div class="sticky-top">
+<div class="sticky-top header-shadow">
   <app-location [obj]="selected"></app-location>
   <app-navbar [userLocation]="selected.a"></app-navbar>
 </div>
